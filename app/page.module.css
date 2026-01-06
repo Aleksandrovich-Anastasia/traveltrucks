@@ -1,55 +1,45 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
+.home {
+  padding-top: 260px;
+  padding-bottom: 260px;
+  padding-left: 64px;
+  text-align: center;
+  background-image: url(../public/picture.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
-}
-
-.main {
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 800px;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  align-items: self-start;
 }
 
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  
+.title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 0.66667;
+  color: #f7f7f7;
+  margin-bottom: 16px;
 }
 
-@media (max-width: 600px) {
-  
+.subtitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: #f7f7f7;
+  margin-bottom: 40px;
 }
 
-@media (prefers-color-scheme: dark) {
- 
-  .page {
-    --background: #000;
-    --foreground: #000;
+.button {
+  background-color: #e44848;
+  padding: 16px 60px;
+  border-radius: 200px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
+.button:hover,
+.button:focus {
+  background-color: #d84343;
 }

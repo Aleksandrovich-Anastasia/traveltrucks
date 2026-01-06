@@ -1,0 +1,76 @@
+:root {
+  --font-family: "Inter", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+  background-color: #ffffff;
+}
+
+/* Посилання */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #2563eb; /* синій при ховері */
+}
+
+/* Кнопки */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Глобальні заголовки */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Гнучка верстка для контейнера */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Лічильники, бейджі */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #ef4444;
+  color: #fff;
+  font-size: 0.75rem;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: -4px;
+  right: -4px;
+}

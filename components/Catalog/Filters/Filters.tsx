@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import VehicleEquipment from "./VehicleEquipment/VehicleEquipment";
-import VehicleType from "./VehicleType/VehicleType";
+import VehicleEquipment from "./Vehicle/VehicleEquipment";
+import VehicleType from "./Vehicle/VehicleType";
 import Location from "./Location/Location";
 import { CamperFilters } from "@/types/filters";
 import styles from "./Filters.module.css";

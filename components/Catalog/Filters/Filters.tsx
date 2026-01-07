@@ -5,6 +5,7 @@ import VehicleEquipment from "./VehicleEquipment/VehicleEquipment";
 import VehicleType from "./VehicleType/VehicleType";
 import Location from "./Location/Location";
 import { CamperFilters } from "@/types/filters";
+import styles from "./Filters.module.css";
 
 const Filters = () => {
   const [filters, setFilters] = useState<CamperFilters>({});
@@ -16,7 +17,7 @@ const Filters = () => {
   const vehicleTypes = ["Van", "Fully Integrated", "Alcove"];
   
   return (
-    <section>
+    <section className={styles.filters}>
       <Location filters={filters} setFilters={setFilters} locations={locations} />
       <VehicleEquipment filters={filters} setFilters={setFilters} equipmentsList={vehicleEquipments} />
       <VehicleType filters={filters} setFilters={setFilters} types={vehicleTypes} />

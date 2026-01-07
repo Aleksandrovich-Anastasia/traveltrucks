@@ -1,0 +1,64 @@
+.wrapper {
+  position: relative;
+  width: 200px;
+}
+
+.title {
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6c717b;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 18px;
+  width: 360px;
+  background: #f7f7f7;
+}
+
+.input {
+  border: none;
+  outline: none;
+  flex: 1;
+  background: #f7f7f7;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  fill: #6c717b;
+}
+.iconActive {
+  fill: #101828;
+}
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: none;
+  background: #f7f7f7;
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.options li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.options li:hover {
+  background: #f0f0f0;
+}

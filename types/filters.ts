@@ -33,6 +33,6 @@ export interface VehicleTypeProps {
 export interface VehicleEquipmentProps {
   filters: CamperFilters;
   setFilters: React.Dispatch<React.SetStateAction<CamperFilters>>;
-  equipmentsList: string[]; // зверни увагу на назву
+  equipmentsList: string[]; 
 }
 

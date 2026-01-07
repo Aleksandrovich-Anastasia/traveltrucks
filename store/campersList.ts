@@ -8,6 +8,7 @@ interface CampersState {
   total: number;
   loading: boolean;
   error: string | null;
+
   filters: CamperFilters;
   page: number;
   limit: number;
@@ -23,52 +24,99 @@ export const useCampersList = create<CampersState>((set, get) => ({
   total: 0,
   loading: false,
   error: null,
-  filters: {},
+
+  filters: {
+    location: "",
+    form: "",
+    AC: false,
+    kitchen: false,
+    TV: false,
+    bathroom: false,
+    radio: false,
+    refrigerator: false,
+    microwave: false,
+    gas: false,
+    water: false,
+  },
+
   page: 1,
   limit: 6,
 
-  setFilters: (filters) => set({ filters, page: 1, campers: [] }),
+  /**
+   * Оновлення фільтрів + скидання результатів
+   * (вимога ТЗ)
+   */
+  setFilters: (filters) =>
+    set({
+      filters,
+      campers: [],
+      page: 1,
+    }),
 
+  /**
+   * Початкове завантаження кемперів
+   */
   loadCampers: async () => {
     const { filters, page, limit } = get();
     set({ loading: true, error: null });
 
     try {
-      const data: CampersResponse = await getCampers({ ...filters, page, limit });
-      set({ campers: data.items, total: data.total });
+      const data: CampersResponse = await getCampers({
+        ...filters,
+        page,
+        limit,
+      });
+
+      set({
+        campers: data.items,
+        total: data.total,
+      });
     } catch (err: unknown) {
-      if (err instanceof Error) {
-        set({ error: err.message });
-      } else {
-        set({ error: "Failed to load campers" });
-      }
+      set({
+        error: err instanceof Error ? err.message : "Failed to load campers",
+      });
     } finally {
       set({ loading: false });
     }
   },
 
+  /**
+   * Довантаження наступної сторінки
+   */
   loadMore: async () => {
     const { filters, page, limit, campers } = get();
     set({ loading: true, error: null });
 
     try {
       const nextPage = page + 1;
-      const data: CampersResponse = await getCampers({ ...filters, page: nextPage, limit });
+
+      const data: CampersResponse = await getCampers({
+        ...filters,
+        page: nextPage,
+        limit,
+      });
+
       set({
         campers: [...campers, ...data.items],
         total: data.total,
         page: nextPage,
       });
     } catch (err: unknown) {
-      if (err instanceof Error) {
-        set({ error: err.message });
-      } else {
-        set({ error: "Failed to load campers" });
-      }
+      set({
+        error: err instanceof Error ? err.message : "Failed to load campers",
+      });
     } finally {
       set({ loading: false });
     }
   },
 
-  resetCampers: () => set({ campers: [], total: 0, page: 1 }),
+  /**
+   * Повний скидання списку
+   */
+  resetCampers: () =>
+    set({
+      campers: [],
+      total: 0,
+      page: 1,
+    }),
 }));

@@ -25,10 +25,6 @@ a {
   color: inherit;
 }
 
-a:hover {
-  color: #2563eb; /* синій при ховері */
-}
-
 /* Кнопки */
 button {
   cursor: pointer;

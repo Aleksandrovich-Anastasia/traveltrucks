@@ -42,10 +42,7 @@ export const useCampersList = create<CampersState>((set, get) => ({
   page: 1,
   limit: 6,
 
-  /**
-   * Оновлення фільтрів + скидання результатів
-   * (вимога ТЗ)
-   */
+  
   setFilters: (filters) =>
     set({
       filters,
@@ -53,9 +50,6 @@ export const useCampersList = create<CampersState>((set, get) => ({
       page: 1,
     }),
 
-  /**
-   * Початкове завантаження кемперів
-   */
   loadCampers: async () => {
     const { filters, page, limit } = get();
     set({ loading: true, error: null });
@@ -80,9 +74,6 @@ export const useCampersList = create<CampersState>((set, get) => ({
     }
   },
 
-  /**
-   * Довантаження наступної сторінки
-   */
   loadMore: async () => {
     const { filters, page, limit, campers } = get();
     set({ loading: true, error: null });
@@ -110,9 +101,6 @@ export const useCampersList = create<CampersState>((set, get) => ({
     }
   },
 
-  /**
-   * Повний скидання списку
-   */
   resetCampers: () =>
     set({
       campers: [],

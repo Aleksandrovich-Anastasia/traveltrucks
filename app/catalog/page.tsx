@@ -1,3 +1,4 @@
+"use client";
 import CatalogPageContent from "@/components/Catalog/CatalogPageContent";
 
 const CatalogPage = () => {

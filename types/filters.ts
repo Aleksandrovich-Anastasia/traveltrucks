@@ -1,21 +1,10 @@
 export interface CamperFilters {
-  location?: string;
-  type?: string;   
-  equipments?: string[];
-  
- 
-  AC?: boolean;
-  Kitchen?: boolean;
-  TV?: boolean;
-  Bathroom?: boolean;
-  Radio?: boolean;
-  Refrigerator?: boolean;
-  Microwave?: boolean;
-  Gas?: boolean;
-  Water?: boolean;
-
-  form?: string; 
+  location: string;
+  type: string;
+  equipments: string[];
 }
+
+
 
 
 export interface LocationProps {
@@ -30,9 +19,19 @@ export interface VehicleTypeProps {
   types: string[];
 }
 
+export interface VehicleEquipmentItem {
+  label: string;
+  value: string;
+}
+
 export interface VehicleEquipmentProps {
   filters: CamperFilters;
-  setFilters: React.Dispatch<React.SetStateAction<CamperFilters>>;
-  equipmentsList: string[]; 
+  setFilters: (
+    filters:
+      | Partial<CamperFilters>
+      | ((prev: CamperFilters) => CamperFilters)
+  ) => void;
+  equipmentsList: VehicleEquipmentItem[];
 }
+
 

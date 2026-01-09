@@ -5,32 +5,29 @@ export interface GalleryImage {
 
 export interface Review {
   reviewer_name: string;
-  reviewer_rating: number; 
+  reviewer_rating: number;
   comment: string;
-}
-
-export interface CampersResponse {
-  total: number;
-  items: Camper[];
 }
 
 export interface Camper {
   id: string;
   name: string;
+  location: string;
+  form: string;
   price: number;
   rating: number;
-  location: string;
+  gallery: GalleryImage[];
   description: string;
 
-  form: string;
   length: string;
   width: string;
   height: string;
   tank: string;
   consumption: string;
-
   transmission: string;
   engine: string;
+
+  // ⚠️ обладнання приходить З ВЕРХНЬОГО РІВНЯ
   AC: boolean;
   bathroom: boolean;
   kitchen: boolean;
@@ -41,6 +38,10 @@ export interface Camper {
   gas: boolean;
   water: boolean;
 
-  gallery: GalleryImage[];
   reviews: Review[];
+}
+
+export interface CampersResponse {
+  total: number;
+  items: Camper[];
 }

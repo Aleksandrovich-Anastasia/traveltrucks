@@ -9,14 +9,15 @@ const VehicleEquipment: FC<VehicleEquipmentProps> = ({
   setFilters,
   equipmentsList,
 }) => {
-  const toggleEquipment = (equip: string) => {
+  const toggleEquipment = (value: string) => {
     setFilters((prev) => {
-      const current = prev.equipments || [];
+      const current = prev.equipments ?? [];
+
       return {
         ...prev,
-        equipments: current.includes(equip)
-          ? current.filter((e) => e !== equip)
-          : [...current, equip],
+        equipments: current.includes(value)
+          ? current.filter((e) => e !== value)
+          : [...current, value],
       };
     });
   };
@@ -26,23 +27,23 @@ const VehicleEquipment: FC<VehicleEquipmentProps> = ({
       <h4 className={styles.title}>Vehicle equipment</h4>
 
       <div className={styles.list}>
-        {equipmentsList.map((equip) => {
-          const isChecked = filters.equipments?.includes(equip);
+        {equipmentsList.map(({ label, value }) => {
+          const isChecked = filters.equipments?.includes(value);
 
           return (
-            <label key={equip} className={styles.item}>
+            <label key={value} className={styles.item}>
               <input
                 type="checkbox"
                 className={styles.input}
                 checked={!!isChecked}
-                onChange={() => toggleEquipment(equip)}
+                onChange={() => toggleEquipment(value)}
               />
 
               <svg className={styles.icon}>
-                <use href={`/sprite.svg#icon-${equip}`} />
+                <use href={`/sprite.svg#icon-${value}`} />
               </svg>
 
-              <span className={styles.label}>{equip}</span>
+              <span className={styles.label}>{label}</span>
             </label>
           );
         })}

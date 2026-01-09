@@ -1,6 +1,5 @@
 .wrapper {
   position: relative;
-  width: 200px;
 }
 
 .title {
@@ -17,7 +16,7 @@
   border: none;
   border-radius: 12px;
   padding: 18px;
-  width: 360px;
+  width: 100%;
   background: #f7f7f7;
 }
 

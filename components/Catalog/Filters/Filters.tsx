@@ -1,27 +1,38 @@
 "use client";
 
-import { useState } from "react";
-import VehicleEquipment from "./Vehicle/VehicleEquipment";
-import VehicleType from "./Vehicle/VehicleType";
-import Location from "./Location/Location";
+import { FC } from "react";
 import { CamperFilters } from "@/types/filters";
+import Location from "./Location/Location";
+import VehicleType from "./Vehicle/VehicleType";
+import VehicleEquipment from "./Vehicle/VehicleEquipment";
 import styles from "./Filters.module.css";
 
-const Filters = () => {
-  const [filters, setFilters] = useState<CamperFilters>({});
-    
-  const locations = ["Kyiv", "Odesa", "Lviv", "Kharkiv", "Dnipro", "Sumy", "Poltava"];
-  const vehicleEquipments = [
-    "AC", "Automatic", "Kitchen", "TV", "Bathroom", "Refrigerator", "Microwave", "Gas", "Water", "Radio"
-  ];
-  const vehicleTypes = ["Van", "Fully Integrated", "Alcove"];
-  
+interface Props {
+  filters: CamperFilters;
+  setFilters: (filters: Partial<CamperFilters> | ((prev: CamperFilters) => CamperFilters)) => void;
+}
+
+const camperTypes = ["Van", "Fully Integrated", "Alcove"];
+const camperEquipments = [
+  { label: "AC", value: "AC" },
+  { label: "Kitchen", value: "kitchen" },
+  { label: "TV", value: "TV" },
+  { label: "Bathroom", value: "bathroom" },
+  { label: "Refrigerator", value: "refrigerator" },
+  { label: "Microwave", value: "microwave" },
+  { label: "Gas", value: "gas" },
+  { label: "Water", value: "water" },
+  { label: "Radio", value: "radio" },
+];
+const locations = ["Kyiv", "Lviv", "Odesa", "Kharkiv", "Dnipro", "Sumy", "Poltava"];
+
+const Filters: FC<Props> = ({ filters, setFilters }) => {
   return (
-    <section className={styles.filters}>
+    <div className={styles.filters}>
       <Location filters={filters} setFilters={setFilters} locations={locations} />
-      <VehicleEquipment filters={filters} setFilters={setFilters} equipmentsList={vehicleEquipments} />
-      <VehicleType filters={filters} setFilters={setFilters} types={vehicleTypes} />
-    </section>
+      <VehicleEquipment filters={filters} setFilters={setFilters} equipmentsList={camperEquipments} />
+      <VehicleType filters={filters} setFilters={setFilters} types={camperTypes} />
+    </div>
   );
 };
 

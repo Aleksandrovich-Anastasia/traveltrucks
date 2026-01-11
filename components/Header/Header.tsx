@@ -8,15 +8,14 @@ const Header: React.FC = () => {
   const pathname = usePathname();
 
   return (
-    <header className={styles.header}>
-      {}
+    <header className={styles.headerpage}>
+      <div className={styles.header}>
       <Link href="/" className={styles.logo}>
         <svg className={styles.logoImg}>
           <use href="/sprite.svg#icon-Logo" />
         </svg>
       </Link>
 
-      {}
       <nav className={styles.nav}>
         <Link
           href="/"
@@ -30,7 +29,8 @@ const Header: React.FC = () => {
         >
           Catalog
         </Link>
-      </nav>
+        </nav>
+        </div>
     </header>
   );
 };

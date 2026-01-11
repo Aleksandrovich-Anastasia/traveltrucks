@@ -1,0 +1,119 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px 64px;
+}
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.iconStar {
+  width: 16px;
+  height: 16px;
+  fill: #ffc107;
+}
+.iconMap {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  stroke: #101828;
+}
+.meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.price {
+  font-size: 24px;
+  font-weight: 600;
+}
+.gallery {
+  display: flex;
+  gap: 48px;
+  margin: 28px 0;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 292px;
+  height: 312px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.img {
+  object-fit: cover;
+}
+.description {
+  color: #475467;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.tabsAndForm {
+  display: flex;
+  gap: 40px;
+  margin-top: 44px;
+}
+
+.tabsSection {
+  flex: 1;
+}
+
+.formAside {
+  width: 448px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+.tabHeaders {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid #dadde1;
+  margin-bottom: 24px;
+}
+
+.tabBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  padding-bottom: 24px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  color: #101828;
+  width: auto;
+}
+
+.activeTab::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #e44848;
+}
+
+.detailsList {
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.detailLabel {
+  text-transform: capitalize;
+}

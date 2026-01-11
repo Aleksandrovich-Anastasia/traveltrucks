@@ -1,0 +1,89 @@
+.reviewsTab {
+  width: 100%;
+}
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Один відгук */
+.reviewItem {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e4e7ec;
+}
+
+/* Верхня частина: аватар + імʼя + рейтинг */
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+/* Аватарка */
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #f2f4f7;
+  color: #e44848;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Імʼя + зірки */
+.reviewerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reviewerName {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #101828;
+}
+
+/* Контейнер зірок */
+.starsContainer {
+  display: flex;
+  gap: 4px;
+}
+
+/* Зірка */
+.starIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Заповнена / порожня */
+.filledStar {
+  fill: #ffc531;
+}
+
+.emptyStar {
+  fill: #e4e7ec;
+}
+
+/* Текст відгуку */
+.reviewComment {
+  margin: 0;
+  padding-left: 60px;
+
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+}

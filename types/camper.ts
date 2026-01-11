@@ -1,8 +1,3 @@
-export interface GalleryImage {
-  thumb: string;
-  original: string;
-}
-
 export interface Review {
   reviewer_name: string;
   reviewer_rating: number;
@@ -12,22 +7,14 @@ export interface Review {
 export interface Camper {
   id: string;
   name: string;
-  location: string;
-  form: string;
   price: number;
   rating: number;
-  gallery: GalleryImage[];
+  location: string;
   description: string;
-
-  length: string;
-  width: string;
-  height: string;
-  tank: string;
-  consumption: string;
   transmission: string;
   engine: string;
-
-  // ⚠️ обладнання приходить З ВЕРХНЬОГО РІВНЯ
+  gallery: { thumb: string; original: string }[];
+  reviews: Review[];
   AC: boolean;
   bathroom: boolean;
   kitchen: boolean;
@@ -37,11 +24,10 @@ export interface Camper {
   microwave: boolean;
   gas: boolean;
   water: boolean;
-
-  reviews: Review[];
-}
-
-export interface CampersResponse {
-  total: number;
-  items: Camper[];
+  form: string;
+  length: string;
+  width: string;
+  height: string;
+  tank: string;
+  consumption: string;
 }

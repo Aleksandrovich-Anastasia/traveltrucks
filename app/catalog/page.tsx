@@ -1,12 +1,10 @@
-"use client";
-import CatalogPageContent from "@/components/Catalog/CatalogPageContent";
+import CatalogView from '@/components/CatalogPage/CatalogPage';
 
-const CatalogPage = () => {
-  return (
-    <main>
-      <CatalogPageContent />
-    </main>
-  );
+export const metadata = {
+  title: 'Catalog | TravelTrucks',
+  description: 'Find your perfect camper for the next adventure.',
 };
 
-export default CatalogPage;
+export default function CatalogPage() {
+  return <CatalogView />;
+}

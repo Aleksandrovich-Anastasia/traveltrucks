@@ -1,0 +1,157 @@
+.card {
+  border: 1px solid #dadde1;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.imageBox {
+  width: 290px;
+  height: 100%;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Header & Price */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.priceBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Rating & Location */
+.meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.rating,
+.locationBox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.iconStar {
+  width: 16px;
+  height: 16px;
+  fill: #ffc107;
+}
+
+.iconMap {
+  width: 16px;
+  height: 16px;
+
+  stroke: #101828;
+}
+
+/* Description */
+.description {
+  color: #475467;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+/* TAGS (Характеристики) */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f2f4f7;
+  padding: 12px 18px;
+  border-radius: 100px;
+}
+
+.tagIcon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 0.5px;
+  stroke: #101828;
+}
+
+.tagLabel {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* Buttons */
+.favBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 25px;
+}
+
+.heart {
+  width: 24px;
+  height: 24px;
+
+  stroke: #101828;
+}
+
+.heart.active {
+  fill: #e44848;
+  stroke: #e44848;
+}
+
+.moreBtn {
+  background-color: #e44848;
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 100px;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+  transition: background 0.2s;
+}
+
+.moreBtn:hover {
+  background-color: #d84343;
+}

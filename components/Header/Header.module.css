@@ -1,3 +1,7 @@
+.headerpage {
+  background-color: #f7f7f7;
+  width: 100hv;
+}
 .header {
   display: flex;
   align-items: center;
@@ -5,6 +9,8 @@
   border-bottom: 1px solid #f2f4f7;
   padding: 24px 64px;
   background-color: #f7f7f7;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .logo {

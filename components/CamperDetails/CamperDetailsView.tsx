@@ -65,15 +65,15 @@ export default function CamperDetailsView({ id }: { id: string }) {
               Reviews
             </button>
           </div>
-
+        </div>
+        <div className={styles.bottom}>
           <div className={styles.tabContent}>
             {activeTab === 'features' ? <FeaturesTab camper={camper} /> : <ReviewsTab reviews={camper.reviews} />}
           </div>
-        </div>
-
         <aside className={styles.formAside}>
           <BookingForm />
-        </aside>
+          </aside>
+          </div>
       </div>
     </div>
   );

@@ -48,6 +48,8 @@
   font-weight: 600;
   line-height: 1.2;
   color: #101828;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #dadde1;
 }
 
 /* ---------- LIST ---------- */
@@ -66,13 +68,11 @@
   align-items: center;
 
   padding-bottom: 8px;
-  border-bottom: 1px solid #e4e7ec;
 }
 
 .detailLabel {
   font-size: 16px;
   font-weight: 500;
-  color: #475467;
   text-transform: capitalize;
 }
 
